@@ -6,10 +6,10 @@ import boto3
 #Naming the client and assigning it to s3 var
 s3 = boto3.client('s3')
 
-#Storing the buckets in the response variable
+#Storing the output from list buckets in the response variable
 response = s3.list_buckets()
 
-#Parse the response, response come back as a dict and use the "Buckets" key name 
+#Parse the info from response variable, data from response variable comes back as a dict and the key name "Buckets" is used 
 buckets = response["Buckets"]
 
 #iterate through the buckets; buckets is a list 
