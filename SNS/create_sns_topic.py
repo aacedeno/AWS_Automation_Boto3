@@ -1,10 +1,12 @@
 import boto3
 
-sns = boto3.resource('sns')
+sns = boto3.client('sns')
 
 #Creating SNS topic
-topic = sns.create_topic(
+response = sns.create_topic(
     Name='sns_testing')
+    
+topic = response['TopicArn']
     
 #Prints the ARN 
 print(topic)
